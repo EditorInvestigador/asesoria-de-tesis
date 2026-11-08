@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Asesoría de Tesis Perú | Acompañamiento académico ético</title>
+<title>Asesoría de Tesis Internacional | Acompañamiento académico ético</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" defer></script>
@@ -577,6 +577,12 @@ body.menu-open .fab-wa{opacity:0; pointer-events:none;}
 .pay-card{background:var(--white); border:1px solid var(--line); border-radius:16px; padding:26px;}
 .pay-card h3{font-family:'Fraunces',serif; font-size:22px; margin:8px 0 16px; color:var(--ink);}
 .pay-grid{display:grid; gap:10px;}
+.cur-toggle{display:inline-flex; gap:4px; padding:4px; border-radius:999px; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.25); margin-bottom:14px;}
+.cur-btn{font:inherit; font-size:12px; font-weight:700; border:0; border-radius:999px; padding:6px 12px; cursor:pointer; background:transparent; color:inherit;}
+.cur-btn.active{background:var(--gold-light,#E8C77A); color:var(--burgundy-dark,#4a1019);}
+.services .cur-toggle{background:var(--paper); border-color:var(--line); color:var(--burgundy);}
+.services .cur-btn.active{background:var(--burgundy); color:var(--white);}
+.cur-note{font-size:12px; opacity:.75; margin-top:6px;}
 .pay-item{background:var(--paper); border:1px solid var(--line); border-radius:10px; padding:12px 14px; display:flex; flex-direction:column; gap:2px;}
 .pay-item b{color:var(--burgundy);}
 .pay-item span{font-size:13px; color:#5B4D43;}
@@ -610,7 +616,7 @@ body.menu-open .fab-wa{opacity:0; pointer-events:none;}
       <span class="brand-mark">
         <svg viewBox="0 0 24 24" fill="none" stroke="#E8C77A" stroke-width="2"><path d="M22 10L12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>
       </span>
-      Asesoría de Tesis Perú
+      Asesoría de Tesis Internacional
     </div>
     <nav class="nav-links nav-mobile-hide">
       <a href="#" data-goto="0">Inicio</a>
@@ -638,7 +644,7 @@ body.menu-open .fab-wa{opacity:0; pointer-events:none;}
     <div class="blob b1"></div><div class="blob b2"></div>
     <div class="wrap hero-grid">
       <div>
-        <div class="eyebrow">Asesoría académica ética · Perú 2026</div>
+        <div class="eyebrow">Asesoría académica ética · Internacional 2026</div>
         <h1>¿Necesitas <em>acompañamiento</em> real en tu tesis?</h1>
         <p class="lead">Guiamos a tesistas de pregrado, maestría y doctorado en cada etapa del proyecto: metodología, análisis estadístico, redacción propia y preparación de la sustentación — respetando siempre tu autoría.</p>
         <div class="hero-badges">
@@ -874,16 +880,18 @@ body.menu-open .fab-wa{opacity:0; pointer-events:none;}
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/><path d="M12 9v4M12 17h.01"/></svg>
             <div>
               <div class="notice-title">Precios referenciales</div>
-              <p>Los montos son estimados de mercado (Lima y otras ciudades, 2025–2026). No constituyen una cotización ni un contrato formal. El precio y el tiempo de cumplimiento final dependen del alcance real y se definen por escrito antes de iniciar.</p>
+              <p>Los montos son estimados de mercado (Perú, Bolivia y Latinoamérica, 2025–2026). No constituyen una cotización ni un contrato formal. El precio y el tiempo de cumplimiento final dependen del alcance real y se definen por escrito antes de iniciar.</p>
             </div>
           </div>
         </div>
 
         <div class="calc-result">
           <div class="lottie lottie-corner" data-lottie="bars" aria-hidden="true"></div>
+          <div class="cur-toggle" role="group" aria-label="Moneda"><button type="button" class="cur-btn active" data-cur="PEN">S/ Soles</button><button type="button" class="cur-btn" data-cur="BOB">Bs Bolivianos</button></div>
           <div class="result-label">Estimado del paquete completo</div>
           <div class="result-amount mono" id="totalRange">S/ 0 – S/ 0</div>
           <div class="result-sub">Proyecto de tesis + tesis final, ajustado por nivel académico</div>
+          <div class="cur-note" data-cur-note></div>
 
           <div class="result-meta">
             <div><div class="k">Precio base (rango)</div><div class="v" id="baseRange">—</div></div>
@@ -933,6 +941,8 @@ body.menu-open .fab-wa{opacity:0; pointer-events:none;}
         <p>Estos servicios se cotizan por separado y no están incluidos en el paquete base. Filtra por categoría para explorarlos — cada tarjeta indica precio y tiempo de cumplimiento (mínimo–máximo).</p>
       </div>
 
+      <div class="cur-toggle" role="group" aria-label="Moneda"><button type="button" class="cur-btn active" data-cur="PEN">S/ Soles</button><button type="button" class="cur-btn" data-cur="BOB">Bs Bolivianos</button></div>
+      <div class="cur-note" data-cur-note style="margin:-8px 0 14px;"></div>
       <div class="filter-bar" id="filterBar"></div>
       <div class="svc-grid" id="svcGrid"></div>
 
@@ -991,7 +1001,7 @@ body.menu-open .fab-wa{opacity:0; pointer-events:none;}
           </details>
           <details class="faq-item">
             <summary>¿La asesoría es virtual o presencial?<span class="faq-icon" aria-hidden="true">+</span></summary>
-            <p>Atendemos de forma virtual (videollamada y WhatsApp) en todo el Perú, y de forma presencial a coordinar.</p>
+            <p>Atendemos de forma virtual (videollamada y WhatsApp) en Perú, Bolivia y cualquier país, y de forma presencial a coordinar.</p>
           </details>
           <details class="faq-item">
             <summary>¿Trabajan con cualquier universidad?<span class="faq-icon" aria-hidden="true">+</span></summary>
@@ -1009,6 +1019,7 @@ body.menu-open .fab-wa{opacity:0; pointer-events:none;}
           <div class="pay-grid">
             <div class="pay-item"><b>Yape</b><span>Pago al instante desde tu celular</span></div>
             <div class="pay-item"><b>Plin</b><span>Pago al instante desde tu celular</span></div>
+            <div class="pay-item"><b>PayPal</b><span>Pago con tarjeta o saldo PayPal desde cualquier país</span></div>
             <div class="pay-item"><b>Transferencia o depósito bancario</b><span>Te enviamos los datos de la cuenta</span></div>
             <div class="pay-item"><b>Pago por etapas</b><span>Pagas cada etapa al iniciarla</span></div>
           </div>
@@ -1061,7 +1072,7 @@ body.menu-open .fab-wa{opacity:0; pointer-events:none;}
         </div>
         <div class="contact-row">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
-          <div><div class="k">Formas de pago</div><div class="v">Yape, Plin, transferencia · pago por etapas</div></div>
+          <div><div class="k">Formas de pago</div><div class="v">Yape, Plin, PayPal, transferencia · pago por etapas</div></div>
         </div>
         <div class="contact-row">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12v10H4V12M2 7h20v5H2zM12 22V7"/></svg>
@@ -1073,7 +1084,7 @@ body.menu-open .fab-wa{opacity:0; pointer-events:none;}
 
   <footer>
     <div class="wrap">
-      <span>© 2026 Asesoría de Tesis Perú. Precios y plazos referenciales, sujetos a evaluación del alcance real.</span>
+      <span>© 2026 Asesoría de Tesis Internacional. Precios y plazos referenciales, sujetos a evaluación del alcance real.</span>
       <span>Contacto: Perú <a href="tel:+51925937386">+51 925 937 386</a> · Bolivia <a href="tel:+59167108048">+591 67108048</a></span>
     </div>
   </footer>
@@ -1288,7 +1299,34 @@ const selUniversidad = document.getElementById('selUniversidad');
 const selNivel = document.getElementById('selNivel');
 const hintComplejidad = document.getElementById('hintComplejidad');
 
-function fmt(n){ return 'S/ ' + Math.round(n).toLocaleString('es-PE'); }
+/* Moneda: los precios base están en soles (PEN). Ajusta TC_BOB si cambia el tipo de cambio. */
+const TC_BOB = 2.05; // 1 sol peruano = 2.05 bolivianos (referencial)
+let CUR = 'PEN';
+function fmt(n){
+  return CUR === 'BOB'
+    ? 'Bs ' + Math.round(n * TC_BOB).toLocaleString('es-PE')
+    : 'S/ ' + Math.round(n).toLocaleString('es-PE');
+}
+function stripCur(t){ return t.replace(/^(S\/|Bs) /, ''); }
+function updateCurNotes(){
+  document.querySelectorAll('[data-cur-note]').forEach(el => {
+    el.textContent = CUR === 'BOB'
+      ? 'Montos convertidos a bolivianos con tipo de cambio referencial: S/ 1 = Bs ' + TC_BOB.toFixed(2) + '.'
+      : '';
+  });
+}
+function setCurrency(cur){
+  CUR = cur;
+  document.querySelectorAll('.cur-btn').forEach(b => b.classList.toggle('active', b.dataset.cur === cur));
+  updateCurNotes();
+  if (typeof compute === 'function') compute();
+  const act = document.querySelector('.filter-btn.active');
+  if (typeof renderServicios === 'function') renderServicios(act ? act.textContent : 'Todos');
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('.cur-btn');
+  if (b && b.dataset.cur !== CUR) setCurrency(b.dataset.cur);
+});
 
 function currentCarreraComplejidad(){
   const opt = selCarrera.options[selCarrera.selectedIndex];
@@ -1331,7 +1369,7 @@ function updateChart(minVals, maxVals){
     const barNum = document.getElementById('barNum' + i);
     if(barMin) barMin.style.width = minPct + '%';
     if(barMax) barMax.style.width = maxPct + '%';
-    if(barNum) barNum.textContent = fmt(v).replace('S/ ','') + '–' + fmt(maxVals[i]).replace('S/ ','');
+    if(barNum) barNum.textContent = stripCur(fmt(v)) + '–' + stripCur(fmt(maxVals[i]));
   });
 }
 
